@@ -9,7 +9,7 @@ namespace Diaay
             var databaseManager = new DatabaseManager();
             
 
-            databaseManager.PrintMSSQLVersion();
+            //databaseManager.PrintMSSQLVersion();
             
             databaseManager.CheckAllStudents();
 
