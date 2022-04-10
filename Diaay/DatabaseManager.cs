@@ -20,14 +20,14 @@ namespace Diaay
             _sqlConnection.Open();
         }
         
-        /*public void PrintMSSQLVersion()
+        public void PrintMSSQLVersion()
         {
             var sql = "SELECT @@VERSION";
             using var cmd = new SqlCommand(sql, _sqlConnection);
             var version = cmd.ExecuteScalar().ToString();
             Console.WriteLine("MSSQL VERSION: " + version);
         }
-        */
+        
         
         public void CheckAllStudents()
         {
