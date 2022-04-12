@@ -36,7 +36,7 @@ namespace Diaay
             using SqlDataReader students = cmd.ExecuteReader();
             while(students.Read())
             {
-                Console.WriteLine("{0} {1} {2}", students.GetInt32(0), students.GetString(1),students.GetString(2));
+                Console.WriteLine($"{students.GetInt32(0),-4} {students.GetString(1),-10} {students.GetString(2),-10}");
             }
         }
 
@@ -60,6 +60,7 @@ namespace Diaay
 
 
         }
+
 
 
 

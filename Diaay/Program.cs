@@ -9,54 +9,50 @@ namespace Diaay
             var databaseManager = new DatabaseManager();
             //databaseManager.PrintMSSQLVersion();
             //databaseManager.CheckAllStudents();
-            string firstName;
-            string lastName;
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(" Witaj w Elektornicznym Dzienniku, Wybierz opcje: \n 1.Dodaj Studenta \n 2. Usuń studenta");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(" Opcje wybierasz za pomoca numeru opcji");
-            Console.ResetColor();
-            bool valid;
-            int option;
-            valid = int.TryParse(Console.ReadLine(), out option);
-            if (valid == true)
+            string firstName, lastName;
+            while (true)
             {
-                    if (option == 1)
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine(" Witaj w Elektornicznym Dzienniku, Wybierz opcje: \n 1.Dodaj Studenta \n 2. Usuń studenta");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" Opcje wybierasz za pomoca numeru opcji");
+                Console.ResetColor();
+                int option;
+                var valid = int.TryParse(Console.ReadLine(), out option);
+                if (valid)
+                {
+                    switch (option)
                     {
-                        Console.WriteLine("Podaj Imie");
-                        firstName = Console.ReadLine();
-                        Console.WriteLine("Podaj Nazwisko");
-                        lastName = Console.ReadLine();
-                        databaseManager.AddNewStudent(firstName, lastName);
+                        case 1:
+                            Console.WriteLine("Podaj Imie");
+                            firstName = Console.ReadLine();
+                            Console.WriteLine("Podaj Nazwisko");
+                            lastName = Console.ReadLine();
+                            databaseManager.AddNewStudent(firstName, lastName);
+                            break;
+                        case 2:
+                            Console.WriteLine("Podaj Imie");
+                            firstName = Console.ReadLine();
+                            Console.WriteLine("Podaj Nazwisko");
+                            lastName = Console.ReadLine();
+                            databaseManager.DeleteExistStudent(firstName, lastName);
+                            break;
+                        case 3:
+                            databaseManager.CheckAllStudents();
+                            break;
+
+                        default:
+                            Console.WriteLine("Twój wybór nie pasuje do żadnej z opcji");
+                            break;
+
                     }
-                    else if (option == 2)
-                    {
-                        Console.WriteLine("Podaj Imie");
-                        firstName = Console.ReadLine();
-                        Console.WriteLine("Podaj Nazwisko");
-                        lastName = Console.ReadLine();
-                        databaseManager.DeleteExistStudent(firstName, lastName);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Twój wybór nie pasuje do żadnej z opcji");
-                    }
+                }
+                else
+                {
+                    Console.WriteLine("Coś poszlo nie tak");
+                }
             }
-            else
-            {
-                Console.WriteLine("Coś poszlo nie tak");
-            }
-
-
-
-
-
-
-
-
-
-
         }
     }
 }
