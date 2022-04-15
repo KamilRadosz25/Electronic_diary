@@ -60,6 +60,17 @@ namespace Diaay
 
 
         }
+        public void AddNewMark(string firstName,string lastName,string subject, string type, int mark)
+        {
+            var sql = string.Format("INSERT INTO marks(id_student,id_subject,id_type,mark) VALUES((select id_student from students where first_name='{0}' and last_name='{1}'),(select id_subject from subjects where name='{2}'),(select id_type from type_marks where type_mark='{3}'),{4})",firstName,lastName,subject,type,mark);
+            using var cmd = new SqlCommand(sql, _sqlConnection);
+            cmd.ExecuteNonQuery();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Ocena Dodana");
+            Console.ResetColor();
+
+            
+        }
 
 
 
