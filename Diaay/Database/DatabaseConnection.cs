@@ -11,7 +11,7 @@ namespace Diary.Database
         {
             var connectionString = @"Server=.\SQLEXPRESS;Database=Electronic_school_diary;Trusted_Connection=True;";
             _sqlConnection = new SqlConnection(connectionString);
-            //_sqlConnection.Open();
+            _sqlConnection.Open();
         }
 
         public int ExecuteNonQuery(string sql)
