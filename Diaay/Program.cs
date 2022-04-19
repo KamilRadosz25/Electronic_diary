@@ -19,7 +19,7 @@ namespace Diary
             return host.RunAsync();
         }
 
-        static IHostBuilder CreateHostBuilder(string[] args) =>
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
             .ConfigureServices((_, services) =>
             services.AddSingleton<IDatabaseConnection, DatabaseConnection>()

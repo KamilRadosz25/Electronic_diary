@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Diary.Database
 {
@@ -19,7 +18,6 @@ namespace Diary.Database
             using var cmd = new SqlCommand(sql, _sqlConnection);
             return cmd.ExecuteNonQuery();
         }
-
 
         public void ExecuteReader(string sql, out SqlDataReader dataReader)
         {

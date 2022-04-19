@@ -43,7 +43,6 @@ namespace Diary.Manager
                         Console.WriteLine("Twój wybór nie pasuje do żadnej z opcji");
                         break;
                 }
-
             }
             else
             {
